@@ -8,3 +8,5 @@ tar zxvf jetty.tgz --strip-components=1
 sed '/<!--$/d;/^ *-->$/d' demo-base/webapps/test.d/override-web.xml >/tmp/$$.xml
 mv /tmp/$$.xml demo-base/webapps/test.d/override-web.xml
 
+[ ! -f lib/setuid/libsetuid-osx.so || x`uname -s` != xLinux ] || \
+	rm lib/setuid/libsetuid-osx.so
